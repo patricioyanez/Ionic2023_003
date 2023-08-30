@@ -23,7 +23,13 @@
     Alerta con AlertController
   </ion-button>
 
-
+  <ion-button (click)="incrementar()">
+    <ion-icon slot="icon-only" name="add"></ion-icon>
+    Incremento
+  </ion-button>
+  <ion-text color="success">
+    <h1>Ha presionado {{numero}} veces el botón</h1>
+  </ion-text>
 </ion-content>
 
 <ion-footer>
