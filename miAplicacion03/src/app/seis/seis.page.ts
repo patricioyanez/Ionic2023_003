@@ -24,10 +24,13 @@ export class SeisPage implements OnInit {
   constructor() { 
     this.numero = 1;
     this.nombre = "Ana";
-    this.permitir = true;
+    this.permitir = false;
   }
 
   ngOnInit() {
   }
-
+  mostrar()
+  {
+    this.permitir = !this.permitir;
+  }
 }

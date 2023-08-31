@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>siete</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-text color="secondary">
+    <h1>Directiva unidireccional</h1>
+    <input type="text" [ngModel]="nombre">
+  </ion-text>
+  <ion-text color="tertiary">
+    <h1>{{nombre}}</h1>
+  </ion-text>
+
+  <ion-text color="secondary">
+    <h1>Directiva bidireccional</h1>
+    <input type="text" [(ngModel)]="apellido">
+  </ion-text>
+  <ion-text color="tertiary">
+    <h1>{{apellido}}</h1>
+  </ion-text>
+
+  <h1>Ejercicios: Sumar 2 números y mostrar el resultado. Usar botón</h1>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button href="https://ionicframework.com/"><ion-icon name="logo-ionic"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://angular.io/"><ion-icon name="logo-angular"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button href="/uno"><ion-icon name="arrow-back-circle-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="arrow-back-circle-outline"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Opciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-footer>
