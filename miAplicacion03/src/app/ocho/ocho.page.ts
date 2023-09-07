@@ -32,10 +32,14 @@ export class OchoPage implements OnInit {
       this.mensajeAlerta('Nota 3 no es válida');
     else
     {
-      
+      //notas correctas
+      this.promedio = (nota1 + nota2 + nota3) / 3;
     }
   }
-  
+  limpiar()
+  {
+    this.promedio = this.n1 = this.n2 = this.n3 = '';
+  }
   async mensajeAlerta(mensaje: string)
   {
     const toast = await this.toastController.create({
