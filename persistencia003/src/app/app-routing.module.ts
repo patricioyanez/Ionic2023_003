@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'segunda',
     loadChildren: () => import('./segunda/segunda.module').then( m => m.SegundaPageModule)
   },
+  {
+    path: 'tercera-listado',
+    loadChildren: () => import('./tercera-listado/tercera-listado.module').then( m => m.TerceraListadoPageModule)
+  },
+  {
+    path: 'tercera-detalle',
+    loadChildren: () => import('./tercera-detalle/tercera-detalle.module').then( m => m.TerceraDetallePageModule)
+  },
 ];
 
 @NgModule({

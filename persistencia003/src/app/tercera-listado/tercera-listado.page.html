@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>terceraListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item *ngFor="let persona of personas">
+    <ion-avatar slot="start">
+      <img [src]="persona.foto" />
+    </ion-avatar>
+    <ion-label>{{persona.nombre}}</ion-label>
+  </ion-item>
+</ion-content>
