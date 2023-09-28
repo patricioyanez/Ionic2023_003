@@ -19,9 +19,9 @@ export class QuintaPage implements OnInit {
   {
     //Ejercicio 1: Validar todos los datos
     // antes de guardar
-    if(this.persona.rut == "")
+    if(!this.persona.rut)
       this.mensajeError('Falta el rut');
-    else if(this.persona.nombre == "")
+    else if(!this.persona.nombre)
       this.mensajeError('Falta el nombre');
     else
     {
