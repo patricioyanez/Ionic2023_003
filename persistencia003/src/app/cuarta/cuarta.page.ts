@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
-
 @Component({
   selector: 'app-cuarta',
   templateUrl: './cuarta.page.html',
@@ -19,22 +18,23 @@ export class CuartaPage implements OnInit {
   }
   async agregar()
   {
-    if(this.nombre.trim().length > 0)
+    if(this.id.length < 1)
+      this.enviarMensaje('Falta id');
+    else if(this.nombre.length < 1)
+      this.enviarMensaje('Falta Nombre');
+    else
     {
       await this.storage.set(this.id, this.nombre);
       this.id = this.nombre = '';
-      this.enviarMensaje('Nombre Guardado');
+      this.enviarMensaje('Nombre Guardado', 'success');
     }
-    else
-      this.enviarMensaje('Falta Nombre');
   }
-
-  async enviarMensaje(mensaje:string)
+  async enviarMensaje(mensaje:string, color:string = 'danger')
   {
     const t = await this.toast.create({
       message : mensaje,
       duration: 3000,
-      color   : 'warning'
+      color   : color
     });
     t.present();
   }
