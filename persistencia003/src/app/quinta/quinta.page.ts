@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './crud.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,12 @@ import { ToastController } from '@ionic/angular';
 export class QuintaPage implements OnInit {
   persona: any = [];
   constructor(private crud: CrudService,
-              private toast: ToastController) { }
+              private toast: ToastController,
+              private router: Router) { }
 
   ngOnInit() {
   }
-  async agregar()
+  async guardar()
   {
     //Ejercicio 1: Validar todos los datos
     // antes de guardar
@@ -75,5 +77,24 @@ export class QuintaPage implements OnInit {
         this.persona = [];
       }
     }
+  }
+  async eliminar()
+  {
+    if(!this.persona.rut)
+      this.mensajeError('Falta el rut');
+    else
+    {
+      this.crud.eliminar(this.persona.rut);
+      this.mensajeExito('Solicitud realizada');
+      this.persona = [];
+    }
+  }
+  limpiar()
+  {
+    this.persona = [];
+  }
+  listar()
+  {
+    this.router.navigateByUrl('/quintalistado');
   }
 }
