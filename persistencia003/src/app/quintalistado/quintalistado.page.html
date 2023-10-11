@@ -13,7 +13,7 @@
   </ion-text>
     <h1>Ejercicio X</h1>
   <h2>agregar click para ver todos los datos en la pagina quinta</h2>
-  <ion-list *ngFor="let persona of personas">
+  <ion-list *ngFor="let persona of personas" [routerLink]="['/quinta/' + persona.rut]">
     <ion-item>
       <ion-label>{{persona.rut}}</ion-label>
       <ion-label>{{persona.nombre}}</ion-label>
