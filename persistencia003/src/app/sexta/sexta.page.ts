@@ -7,11 +7,14 @@ import { ApirestService } from './apirest.service';
   styleUrls: ['./sexta.page.scss'],
 })
 export class SextaPage implements OnInit {
-
+  usuarios: any;
   constructor(private api: ApirestService) { }
 
-  ngOnInit() {
-    this.api.getUsers();
-  }
+  ngOnInit() {}
 
+
+  async listar(){
+    await this.api.getUsers();
+    this.usuarios = this.api.usuarios;
+  }
 }
