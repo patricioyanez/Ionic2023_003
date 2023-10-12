@@ -15,6 +15,6 @@ export class SextaPage implements OnInit {
 
   async listar(){
     await this.api.getUsers();
-    this.usuarios = this.api.usuarios;
+    this.usuarios = this.api.listado;
   }
 }

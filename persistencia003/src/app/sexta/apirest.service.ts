@@ -6,17 +6,24 @@ import { Injectable } from '@angular/core';
 })
 export class ApirestService {
   private urlAPI = 'https://jsonplaceholder.typicode.com/';
-  usuarios:any =[];
+  listado:any =[];
 
   constructor(private http: HttpClient) { }
 
+// mostrar los datos recibidos en la pagina html
   getUsers()
   {
     const url = this.urlAPI + 'users';
     return this.http.get(url).subscribe((data=[]) => {
-      this.usuarios = data; 
+      this.listado = data; 
     });
-
-// mostrar los datos recibidos en la pagina html
+  }
+  
+  getPostUsers(id:number)
+  {
+    const url = this.urlAPI + 'users/' + id + '/posts';
+    return this.http.get(url).subscribe((data=[]) => {
+      this.listado = data; 
+    });
   }
 }

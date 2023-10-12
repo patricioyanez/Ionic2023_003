@@ -9,8 +9,9 @@
   <ion-button (click)="listar()">
     <ion-icon slot="icon-only" name="list-circle-outline"></ion-icon>
   </ion-button>
-  <ion-list *ngFor="let usuario of usuarios">
+  <ion-list *ngFor="let usuario of usuarios" [routerLink]="['/sextapost/' + usuario.id]">
     <ion-item>
+      <ion-label>{{usuario.username}}</ion-label>
       <ion-label>{{usuario.name}}</ion-label>
     </ion-item>
   </ion-list>
