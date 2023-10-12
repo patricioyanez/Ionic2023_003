@@ -19,7 +19,7 @@ export class SextapostPage implements OnInit {
     })
   }
   async listar(idUsuario:any){
-    await this.api.getPostUsers(idUsuario);
+    this.api.getPostUsers(idUsuario);
     this.posts = this.api.listado;
   }
 }
