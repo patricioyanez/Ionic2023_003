@@ -1,3 +1,6 @@
+
+// 1.- import { HttpClientModule, HttpClient } from '@angular/common/http';
+// 2.- agregar en providers: [HttpClient,{ provide:
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
