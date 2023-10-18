@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'sextapost/:idUsuario',
     loadChildren: () => import('./sextapost/sextapost.module').then( m => m.SextapostPageModule)
   },
+  {
+    path: 'sextacomentario/:idPost',
+    loadChildren: () => import('./sextacomentario/sextacomentario.module').then( m => m.SextacomentarioPageModule)
+  },
 ];
 
 @NgModule({

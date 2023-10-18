@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Comentarios</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="sextapost"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let comentario of comentarios">
+    <ion-item>
+      <ion-label>{{comentario.body}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

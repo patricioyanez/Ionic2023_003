@@ -14,6 +14,7 @@ export class ApirestService {
   constructor(private http: HttpClient) { }
 
 // mostrar los datos recibidos en la pagina html
+
   getUsers()
   {
     const url = this.urlAPI + 'users';
@@ -25,6 +26,14 @@ export class ApirestService {
   getPostUsers(id:number)
   {
     const url = this.urlAPI + 'users/' + id + '/posts';
+    return this.http.get(url).subscribe((data=[]) => {
+      this.listado = data; 
+    });
+  }
+
+  getPostComments(id:number)
+  {
+    const url = this.urlAPI + 'posts/' + id + '/comments';
     return this.http.get(url).subscribe((data=[]) => {
       this.listado = data; 
     });
