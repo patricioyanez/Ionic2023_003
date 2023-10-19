@@ -10,6 +10,8 @@ import { Injectable } from '@angular/core';
 export class ApirestService {
   private urlAPI = 'https://jsonplaceholder.typicode.com/';
   listado:any =[];
+  listado2:any =[];
+  listado3:any =[];
 
   constructor(private http: HttpClient) { }
 
@@ -18,24 +20,20 @@ export class ApirestService {
   getUsers()
   {
     const url = this.urlAPI + 'users';
-    return this.http.get(url).subscribe((data=[]) => {
-      this.listado = data; 
-    });
+    this.http.get(url).subscribe((data=[]) => { this.listado = data; });
+    return this.listado;
   }
   
   getPostUsers(id:number)
   {
+    this.listado2 = [];
     const url = this.urlAPI + 'users/' + id + '/posts';
-    return this.http.get(url).subscribe((data=[]) => {
-      this.listado = data; 
-    });
+    this.http.get(url).subscribe((data=[]) => {this.listado2 = data; });
   }
 
   getPostComments(id:number)
   {
     const url = this.urlAPI + 'posts/' + id + '/comments';
-    return this.http.get(url).subscribe((data=[]) => {
-      this.listado = data; 
-    });
+    this.http.get(url).subscribe((data=[]) => { this.listado3 = data;});
   }
 }
