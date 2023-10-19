@@ -14,13 +14,13 @@ export class SextacomentarioPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap =>{
-      let idPost =paramMap.get('idPost')??0;
-      this.listar(idPost);
+      let idPost = Number(paramMap.get('idPost')??0);
+      this.api.getPostComments(idPost);
     })
   }
-  async listar(idPost:any){
-    this.api.getPostComments(idPost);
-    this.comentarios = this.api.listado;
+  ionViewDidEnter()
+  {
+    this.comentarios = this.api.listado3;
   }
 
 }

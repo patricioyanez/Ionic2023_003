@@ -14,12 +14,12 @@ export class SextapostPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap =>{
-      let idUsuario =paramMap.get('idUsuario')??0;
-      this.listar(idUsuario);
+      let idUsuario =Number(paramMap.get('idUsuario')??0);
+      this.api.getPostUsers(idUsuario);
     })
   }
-  async listar(idUsuario:any){
-    this.api.getPostUsers(idUsuario);
-    this.posts = this.api.listado;
+  ionViewDidEnter()
+  {
+    this.posts = this.api.listado2;
   }
 }
