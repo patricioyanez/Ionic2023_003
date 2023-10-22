@@ -1,0 +1,16 @@
+{
+    "usuario":
+    [
+        {"id": 1, "nombre": "juan", "apellido": "Díaz", "activo": 1},
+        {"id": 2, "nombre": "juana", "apellido": "Adam", "activo": 1},
+        {"id": 3, "nombre": "ana", "apellido": "Arce", "activo": 1}
+    ],
+    "mensajes":
+    [
+        {"id": 1, "usuarioId": 1, "asunto":"Ejemplo Json-Server",   "cuerpo": "asdf asdf 2332 asdf asd"},
+        {"id": 2, "usuarioId": 1, "asunto":"Ejemplo Json-Server 2", "cuerpo": "asdf asdf 9789 asdf asd"},
+        {"id": 3, "usuarioId": 2, "asunto":"Ejemplo Json-Server",   "cuerpo": "asdf asdf asdf asdf 534"},
+        {"id": 4, "usuarioId": 2, "asunto":"Ejemplo Json-Server 2", "cuerpo": "asdf asdf asdf 3453 asd"},
+        {"id": 5, "usuarioId": 3, "asunto":"Ejemplo Json-Server",   "cuerpo": "3234 asdf asdf asdf asd"}
+    ]
+}
