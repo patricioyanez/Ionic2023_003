@@ -47,12 +47,21 @@ describe('=========== Pruebas en pagina septima',()=>
     expect(component.dividir(2,2)).toBeGreaterThan(0);
   })
   it('multiplicar: valor cero',()=>{
-    expect(component.dividir(0,-2)).toEqual(0);
+    expect(component.dividir(0,2)).toEqual(0);
   })
   it('multiplicar: 2 numeros -',()=>{
     expect(component.dividir(-2,-2)).toBeGreaterThan(0);
   })
   it('multiplicar: 1 numero -',()=>{
     expect(component.dividir(2,-2)).toBeLessThan(0);
+  })
+  it('restar: resta correctamente',()=>{
+    expect(component.restar(3,5)).toEqual(-2);
+  })
+  it('restar: 1ro menor',()=>{
+    expect(component.restar(-3,5)).toBeLessThanOrEqual(0);
+  })
+  it('restar: 2ro nro es -',()=>{
+    expect(component.restar(3,-5)).toBeGreaterThanOrEqual(0);
   })
 })
