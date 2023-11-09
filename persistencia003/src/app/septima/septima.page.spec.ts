@@ -42,4 +42,17 @@ describe('=========== Pruebas en pagina septima',()=>
   it('dividir por numero negativo',()=>{
     expect(component.dividir(2,-2)).toBeLessThan(0);
   })
+  
+  it('multiplicar: 2 numeros +',()=>{
+    expect(component.dividir(2,2)).toBeGreaterThan(0);
+  })
+  it('multiplicar: valor cero',()=>{
+    expect(component.dividir(0,-2)).toEqual(0);
+  })
+  it('multiplicar: 2 numeros -',()=>{
+    expect(component.dividir(-2,-2)).toBeGreaterThan(0);
+  })
+  it('multiplicar: 1 numero -',()=>{
+    expect(component.dividir(2,-2)).toBeLessThan(0);
+  })
 })

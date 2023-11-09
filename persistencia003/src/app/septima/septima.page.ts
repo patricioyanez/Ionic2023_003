@@ -26,4 +26,13 @@ export class SeptimaPage implements OnInit {
   Aplicar 3 pruebas diferentes a 
   cada metodo.
   */
+ 
+  multiplicar(n1:number, n2:number)
+  {
+    return n1*n2;
+  }
+  restar(n1:number, n2:number)
+  {
+    return n1-n2;
+  }
 }
